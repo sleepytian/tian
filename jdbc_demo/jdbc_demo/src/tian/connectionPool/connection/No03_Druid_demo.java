@@ -24,8 +24,8 @@ public class No03_Druid_demo {
         Properties properties = new Properties();
         properties.load(inputStream);
 
-        DataSource source = DruidDataSourceFactory.createDataSource(properties);
+        DataSource dataSource = DruidDataSourceFactory.createDataSource(properties);
 
-        return source.getConnection();
+        return dataSource.getConnection();
     }
 }

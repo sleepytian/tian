@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c3p0-config>
+
+    <!-- 默认配置 不用管 -->
+    <default-config>
+        <property name="automaticTestTable">con_test</property>
+        <property name="checkoutTimeout">30000</property>
+        <property name="idleConnectionTestPeriod">30</property>
+        <property name="initialPoolSize">10</property>
+        <property name="maxIdleTime">30</property>
+        <property name="maxPoolSize">100</property>
+        <property name="minPoolSize">10</property>
+        <property name="maxStatements">200</property>
+
+        <user-overrides user="test-user">
+            <property name="maxPoolSize">10</property>
+            <property name="minPoolSize">1</property>
+            <property name="maxStatements">0</property>
+        </user-overrides>
+    </default-config>
+
+    <!-- This app is massive! -->
+    <named-config name="intergalactoApp">
+        <!--
+            提供 获取链接的基本信息
+
+            这些基本信息对应了 jdbc.properties 中获取连接的四个基本信息,
+            但是鉴于 c3p0 单独读取该配置文件, 所以推荐按照 c3p0 硬编码方式获取信息的 函数名 命名这些 name 属性.
+
+        -->
+        <property name="driverClass">com.mysql.jdbc.Driver</property>
+        <property name="jdbcUrl">jdbc:mysql://localhost:3306/test</property>
+        <property name="user">root</property>
+        <property name="password">root</property>
+
+        <!-- 数据库连接池管理链接的属性 还有下一段的两个属性也是比较重要的属性 -->
+        <property name="acquireIncrement">50</property>     <!-- 当数据库连接池中的链接数量不够时, c3p0 向服务器申请的新的连接数量 -->
+        <property name="initialPoolSize">100</property>     <!-- c3p0 初始化的时候创建的连接数 -->
+        <property name="minPoolSize">50</property>
+        <property name="maxPoolSize">1000</property>
+
+        <!-- intergalacticApp adopts a different approach to configuring statement caching -->
+        <property name="maxStatements">50</property>                    <!-- c3p0 中最多维护的 statement 的个数-->
+        <property name="maxStatementsPerConnection">5</property>        <!-- 每一个连接 可以使用的 最多的 statement 的个数 -->
+
+        <!-- 这一段也没什么用 -->
+        <!-- he's important, but there's only one of him -->
+        <user-overrides user="master-of-the-universe">
+            <property name="acquireIncrement">1</property>
+            <property name="initialPoolSize">1</property>
+            <property name="minPoolSize">1</property>
+            <property name="maxPoolSize">5</property>
+            <property name="maxStatementsPerConnection">50</property>
+        </user-overrides>
+
+    </named-config>
+</c3p0-config>
