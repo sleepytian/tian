@@ -26,8 +26,8 @@ datadir=E:\\kits\mysql-8.0.28\data
 
 注意: 
 
-1.   两个目录路径中, 盘符后的符号是两个`\`, 命名不规范会导致后面的配置过程中出现错误
-2.   第二个目录中的 data 现在是不存在的, 但是不要手动创建, 示例的 data 的路径是在 mysql 的根目录下的(也是建议的位置), 为了卸载的时候方便操作, 所以直接卸载根目录下
+1. 两个目录路径中, 盘符后的符号是两个`\`, 命名不规范会导致后面的配置过程中出现错误
+2. 第二个目录中的 data 现在是不存在的, 但是不要手动创建, 示例的 data 的路径是在 mysql 的根目录下的(也是建议的位置), 为了卸载的时候方便操作, 所以直接卸载根目录下
 
 ## 3. 初始化mysql
 
@@ -44,7 +44,7 @@ mysqld --initialize-insecure -user=mysql
 
 首先重启 mysql, 以下两个指令在 具有管理员身份的 cmd 下进行(前面步骤的 cmd 关掉重启)
 
-```
+```shell
 # 启动
 net start mysql
 # 关闭
@@ -53,7 +53,7 @@ net stop mysql
 
 利用 root 用户登录
 
-```
+```shell
 mysql -u root -p
 ```
 
@@ -61,10 +61,9 @@ mysql -u root -p
 
 登录后修改密码 (这里以 root 作为密码 演示)
 
-```mysql
+```sql
 #修改新密码 ALTER USER 'root'@'localhost' IDENTIFIED BY '新密码';
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
 #新密码登录,注意没有空格
 mysql -u root -proot
 ```
-

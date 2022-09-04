@@ -32,4 +32,3 @@ press `space` when the process stops and ask for any information.
 ### check
 
 open your user directory and find hidden dir `.ssh`, open it and copy the content, it's the public key.
-
