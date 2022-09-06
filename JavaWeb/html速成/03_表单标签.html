@@ -1,9 +1,95 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
     <head>
         <title>03_表单标签</title>
     </head>
     <body>
         <h1>html表单标签</h1>
+
+        <!--
+            form 标签中的 action 属性表示发送表单的目标
+
+            method 表示发送方式, 一般是 post, 默认是 get
+            但是一般不使用 get 方式 
+        -->
+        <form action="#" method="post">
+            <!--
+                在每一个表单项目的标签中, 必须指定 name 属性, 否则该标签的内容不会被发送到服务器.
+            -->
+            <!-- 
+                input 标签 附加 text 的 type 属性, 用于输入普通的文本内容
+                如果输入 value 属性, 将会作为默认内容出现在文本框内 (有替代功能, 所以不建议)
+            -->
+            username: <input type="text" name="username">
+            <br>
+
+
+            <!-- password 的 type 属性用于作为密码框 -->
+            password: <input type="password" name="password">
+            <br>
+
+
+            <!-- 
+                radio 类型为单选框类型, 
+                多个单选框成组的话需要指定相同的 name 属性, 并且对于每一钟选择, 需要指定对应的 value 值. 
+                使用 checked 属性决定是否要默认选中某个选项, 
+                完全体表示为 checked="checked", 但是当属性名与属性值相同时, 可以省略属性值, 所以可以简写为 checked
+            -->
+            性别:
+                <input type="radio" name="sex" value="female" checked="checked"> 女
+                <input type="radio" name="sex" value="male"> 男
+            <br>
+
+
+            <!--
+                checkbox 类型为复选框类型
+            -->
+            爱好:
+                <input type="checkbox" name="hobby" value="0" checked="checked"> 爱好1
+                <input type="checkbox" name="hobby" value="1" checked> 爱好2
+                <input type="checkbox" name="hobby" value="2"> 爱好3
+                <input type="checkbox" name="hobby" value="3"> 爱好4
+            <br>
+
+            <!--
+                select 标签 表示下拉列表
+                子标签为 option
+            -->
+            星座:
+            <select name="star" id="star">
+                <option value="0">星座1</option>
+                <option value="1">星座2</option>
+                <option value="2" checked="checked">星座3</option>
+                <option value="3">星座4</option>
+            </select>
+            <br>
+
+
+            <!--
+                多行文本框
+                通过 rows 和 cols 修改文本框宽高度值
+                textarea 的默认值是 前后标签中间的填充值
+            -->
+            备注:
+            <textarea name="textarea" id="note" cols="30" rows="10">
+                这里是 textarea 的默认值
+            </textarea>
+            <br>
+
+
+            <!--
+                提交按钮
+            -->
+            <input type="submit" value=" 提 交 ">
+
+            <!--
+                重置按钮 -> 返回到本页面的默认状态
+            -->
+            <input type="reset" value=" 重 置 ">
+
+            <!-- 普通按钮 -->
+            <input type="button" value="普通 按钮">
+
+        </form>
         
     </body>
 </html>
