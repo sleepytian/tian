@@ -112,7 +112,7 @@ public abstract class BaseDao<T> {
     public Object getValue(Connection connection, String sql, Object...params) {
         Object query = null;
         try {
-            query = queryRunner.query(connection, sql, new ScalarHandler<T>(type), params);
+            query = queryRunner.query(connection, sql, new ScalarHandler<T>(), params);
         } catch (SQLException e) {
             e.printStackTrace();
         }

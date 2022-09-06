@@ -54,7 +54,93 @@ com.tian.demo
 
 ## 1. 实现数据表类 Employee
 
+```java
+package com.jdbc_demo.bean;
 
+import java.util.Date;
+
+public class Employee {
+    private int id;
+    private String first_name;
+    private String last_name;
+    private String email;
+    private Date hire_date;
+
+    /**
+     * 空参数构造器 不建议使用
+     */
+    public Employee() {
+    }
+
+    /**
+     * 全参数构造器
+     * @param id 员工id
+     * @param first_name 员工名
+     * @param last_name 员工姓
+     * @param email email
+     * @param hire_date 雇佣时间
+     */
+    public Employee(int id, String first_name, String last_name, String email, Date hire_date) {
+        this.id = id;
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.hire_date = hire_date;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", email='" + email + '\'' +
+                ", hire_date=" + hire_date +
+                '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getHire_date() {
+        return hire_date;
+    }
+
+    public void setHire_date(Date hire_date) {
+        this.hire_date = hire_date;
+    }
+}
+
+```
 
 ## 2. 实现 BaseDAO
 

@@ -1,0 +1,170 @@
+<html>
+
+    <head>
+        <!-- 
+            这里保存的是 html 网页头 主要是一些关于该页面的信息 
+            下面是一些 head 标签中常用的子标签-->
+
+        <!-- meta 标签可以设置 html 文件的 字符集设置 -->
+        <meta charset="utf-8">
+
+        <!-- title 标签保存网页的标题 -->
+        <title>01_html基本标签</title>
+    
+    </head>
+
+    <body>
+        hello, html!
+        
+        <!-- br/ 是一个单标签, 表示换行 -->
+        <br/> 
+        
+        你好, html!
+
+        <!-- p 标签用于表示一个段落, 段落之间会自动换行并且行间距较大-->
+        <p> 这是第一个段落 </p> 
+        <p> 这里是第二个段落 </p>
+
+        <!-- <img src="resources/headimg.jpg" alt="pic lost"> <!-- img 是图片标签, 通过 src 引用目标图片 -->
+
+        <!-- 
+            img 是图片标签, 通过 src 引用目标图片
+
+            通过 width 和 height 属性可以修改图片的长宽
+            alt 表示图片提示
+
+            路径一般分为相对路径和绝对路径
+
+        -->
+        <img src="resources/headimg.jpg" alt="这是一张图片" width="120px" height="120px"> 
+
+        <p>下面是六种标题, 分别是 h1->h6, 不存在七级标题</p>
+        <h1>这是一级标题</h1>
+        <h6>这是六级标题</h6>
+        <!-- 
+
+            错误的标签一般不会报错, 理由如下: 
+
+            html 是解释型标记语言,  (java 是编译型语言) 浏览器是容错的.
+
+            浏览器会尽可能解释语言内容, 无法解释的内容会放弃解释
+            
+        -->
+
+        <h1>下面是列表标签</h1>
+        <!-- 
+            列表 
+            列表分为 有序列表 ol 和 无序列表 ul
+
+            列表中有 列表项 <li></li> (list item)
+        -->
+
+        <p>下面是一个有序列表</p>
+        
+        <!--
+            有序列表可以在 ol 标签的 位置添加更多属性, 比如:
+            type 表示列表序号的类型, 包括 1; A; a; I; i;
+            start 表示从某个位置开始 比如 start="3"
+        -->
+
+        <ol type="a" start="2">
+            <li>第一项</li>
+            <li>第二项</li>
+            <li>第三项</li>
+        </ol>
+
+        <!--
+            无序列表:
+
+            type 属性用于决定前面的符号的形式, 包括 disc; square; circle
+
+            但是无序列表不存在 start 属性
+        -->
+        <p>下面是一个无序列表</p>
+        <ul type="circle">
+            <li>无序a</li>
+            <li>无序b</li>
+            <li>无序c</li>
+        </ul>
+
+
+        <!--
+            bold, italic, underline 三种特殊字体形式
+        -->
+        <p>
+            <b>这是粗体字,</b><i>这是斜体字,</i><u>这里是下划线.</u>
+        </p>
+
+
+        <!--
+            下面是特殊字体的写法
+        -->
+        <p>
+            <b><i><u>三种特殊形式是可以同时存在的</u></i></b>
+        </p>
+
+        <h1>
+            下面是特殊位置字体 或者符号 
+        </h1>
+
+        <p>
+            <b>这些符号可以到网上随时查到</b>
+        </p>
+       
+        <p>
+            下面是上标和下标
+        </p>
+        
+        <p>
+            水分子的化学式: H<sub>2</sub>O
+            <br>
+            二的立方: 2<sup>3</sup>
+        </p>
+
+        <p>
+            下面是一些特殊符号
+        </p>
+
+        <p>使用 &lt 可以表示小于号 (less than); 或者 &gl(great than); &le (less equal); &ge(great equal) </p>
+
+        <p>
+            a小于b: a&lt;b <br>
+            a大于b: a&gt;b <br>
+            大于等于: a&ge;b <br>
+            小于等于: a&le;b <br>
+            注册商标: &reg; <br>
+            版权符号: &copy; <br>
+        </p>
+
+        <h1>span 标签</h1>
+        <!-- 
+            span 标签
+            
+            表示一个不换行的块 所以可以对 span 的内容做针对性的处理
+
+        -->
+        <span type="border="1px green solid; display: block">这是一个 span.</span>
+
+
+        <h1>超链接 a 标签</h1>
+        <!--
+            超链接
+
+            target:
+                默认值为 _self 表示在本页面打开 
+                设置 _blank 表示在新的空窗口打开
+                设置 _parent 表示在父窗口打开
+                设置 _top 表示在顶层窗口打开
+            
+            href: 表示目标地址
+        -->
+        <a href="www.baidu.com" target="_blank">百度一哈~</a>
+
+
+        <h1>层标签 div </h1>
+        <p>一个 div 会默认独占一行</p>
+
+    </body>
+
+
+</html>
