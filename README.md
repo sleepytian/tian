@@ -12,6 +12,6 @@
 -   [mysql 建议安装步骤](mysql简易安装步骤);
 -   [pc 端配置 git 环境](pc端配置git环境.md);
 -   [jdbc 系列笔记](jdbc/);
--   [javaweb 系列笔记](javaweb/);
+-   [javaweb 系列笔记](javaWeb/);
 
 -   
