@@ -1,0 +1,42 @@
+#div1 {
+    width: 400px;
+    height: 400px;
+
+    background-color: greenyellow;
+
+    margin-top: 100px;
+    margin-left: 100px;
+    /*
+    border-width: 2px;
+    border-style: solid;
+    border-color: blue;
+    */
+
+    /* border 的属性可以在一个 border 下面同时写出来 */
+    border: 4px dotted blue;
+
+    /* 也可以通过选择 top, left 等 设置指定位置的样式 */
+    border-top-color: red;
+}
+
+#div2 {
+
+    width: 200px;
+    height: 200px;
+
+    background-color: darkred;
+
+    /* 设置上方高度和左侧宽度 */
+    /*
+    margin-top: 100px;
+    margin-left: 100px;
+    */
+
+    /* 也可以用同一个 margin 属性定义 */
+    margin: 100px 100px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}

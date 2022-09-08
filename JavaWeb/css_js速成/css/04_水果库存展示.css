@@ -1,0 +1,16 @@
+html,body {
+    height: 100%;
+}
+
+body {
+    background-color: antiquewhite;
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    border: 1px darkblue solid;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+}

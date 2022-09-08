@@ -1,0 +1,36 @@
+body {
+    margin:0;
+    padding: 0;
+}
+
+#note {
+    margin-top: 600px;
+}
+
+#div0 {
+    position: absolute; /* absolute 表示绝对定位 */
+}
+
+#div1 {
+    position: relative; /* 使用 相对定位 */
+
+    background-color: greenyellow;
+
+    /* float: left; */
+}
+
+#div2 {
+    position: relative;
+
+    background-color: azure;
+
+    float: left;
+}
+
+#div3 {
+    position: relative;
+
+    background-color: antiquewhite;
+
+    float: left;
+}

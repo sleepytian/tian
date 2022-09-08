@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01 盒子模型</title>
+
+	<!--
+		1. 为什么需要 css
+		2. css 选择器分类
+			a. 标签选择器
+			b. 类选择器
+			c. id 选择器
+		3. css 从位置上的分类:
+			a. 嵌入式样式表 -> 在标签内部使用 style 属性标记的样式表, 拥有最低的 css优先级
+			b. 内部样式表 -> 在 head 标签内部使用 style 标签划出来的 css 代码区域
+			c. 外部样式表 -> <link rel="stylesheet" href="css/demo.css">
+	-->
+
+	<!--
+		使用 style 可以创造一个 css 区域, 用于 专门标记 css 代码
+	-->
+	<style>
+        /* 标签样式表 */
+        p {
+            color: red;
+        }
+
+        /* 类样式表 */
+        .para {
+            background-color: pink;
+        }
+
+        /* id 样式表 */
+        #p4 {
+            font-family: "JetBrains Mono", serif;
+            font-style: italic;
+        }
+
+        /* 组合样式 */
+        /* 表示 div 内部的 p 标签的样式 */
+        div p {
+            color: blue;
+            font-size: 24px;
+        }
+	</style>
+</head>
+
+<body>
+<p>this is paragraph 1st.</p>
+<p>this is paragraph 1st.</p>
+<p class="para">this is paragraph 1st.</p>
+<p id="p4">this is paragraph 1st.</p>
+
+<div>
+	<p>这是一个 div 中的 p 标签内容.</p>
+	<p>这是第二个 div 中的 p 标签内容.</p>
+	<p>这是第三个 div 中的 p 标签内容.</p>
+</div>
+</body>
+</html>

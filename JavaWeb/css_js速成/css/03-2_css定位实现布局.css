@@ -1,0 +1,47 @@
+html, body {
+    height:100%
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    position: relative;
+}
+
+#container {
+    background-color: whitesmoke;
+    height: 100%;
+    width: 80%;
+    margin-left: 10%;
+}
+
+#div_top {
+    background-color: lightgreen;
+    height: 15%;
+    text-align: center;
+}
+
+#div_left {
+    background-color: lightblue;
+    width: 20%;
+    height: 85%;
+    float: left;
+}
+
+#div_main {
+    background-color: azure;
+    width: 80%;
+    height: 75%;
+    float: left;
+}
+
+#div_bottom {
+    background-color: antiquewhite;
+    height: 10%;
+    width: 80%;
+    float: left;
+
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02 盒子模型</title>
+
+	<link rel="stylesheet" href="css/02_盒子模型.css">
+</head>
+<body>
+<p>
+	盒子模型, 从外到内一共有四层:
+</p>
+
+1. margin 间距
+<br>
+2. border 边框
+<br>
+3. padding 填充
+<br>
+4. 盒子的内容
+
+<br>
+<p>
+	有一个比较重要的事情是, html 的 body 部分一般自带一个 margin 属性,
+	这个默认属性的存在直接导致一个现象:
+	<br>
+	如果不手动设置的话, 页面的内容永远不会紧贴浏览器边界(也是网页边界, 一般是 8 个像素)
+	<br>
+	解决方式比较简单(本页面已经使用了这种方式), 在 css 样式表中, 使用标签选择器给 body 设置 margin 和 padding 属性为 0, 即可.
+</p>
+
+
+<hr>
+
+<br>
+
+<div id="div1">
+	<div id="div2">
+		<div id="div3">
+			&nbsp;
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
