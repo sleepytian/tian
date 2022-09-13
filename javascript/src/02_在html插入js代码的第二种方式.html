@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02 第二种方式插入js</title>
+
+	<!--
+	脚本快 插入 js 代码
+	js 脚本块可以在一个页面中出现多次, 并且不限制出现位置
+
+	js 代码的注释和 java 相同
+	-->
+	<script>
+        /*
+		* 暴露在 脚本块中的程序, 在页面打开的时候执行
+		* 并且是从上到下 依次逐行执行
+		* 这个过程 不需要事件
+		*
+		* 注意, alert 函数会阻碍 整个 html 页面加载, 直到用户点击 确定
+		* */
+        window.alert("hello world");
+        alert("hello js");
+	</script>
+
+</head>
+<body>
+<input type="button" value="im a button">
+
+
+</body>
+</html>

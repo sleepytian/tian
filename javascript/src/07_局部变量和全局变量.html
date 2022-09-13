@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>07_局部变量和全局变量</title>
+
+	<script type="text/javascript" src="js/07_局部变量和全局变量.js"></script>
+
+</head>
+<body style="font-family: 'JetBrains Mono Medium',serif;">
+
+<h1>全局变量和局部变量</h1>
+
+<h2>全局变量</h2>
+<p>在函数体之外声明的变量是全局变量, 在浏览器打开时声明, 关闭时销毁 <b> <u>尽量少用全局变量, 会占用大量浏览器内存</u>
+</b></p>
+<p>全局变量会一直在浏览器的内存中, 耗费内存空间</p>
+
+<h2>局部变量</h2>
+<p>在函数体中声明的变量, 包括函数形参, 都属于局部变量</p>
+<p>局部变量的声明周期, 函数开始执行时, 局部变量的内存空间开辟, 函数结束后, 局部变量的内存空间释放</p>
+<p>局部变量声明周期较短</p>
+
+<h2>局部变量与全局变量同名</h2>
+<p>当局部变量和全局变量同名, 并在函数中调用时, 会采用就近原则</p>
+<br>
+
+<div style="padding:10px; border: green 1px solid; ">
+	假设有全局变量: &nbsp; var username = "jack"; <br>
+	然后有函数定义: &nbsp; function accessUsername () {
+	var username = "rose";
+	alert("user name is: " + username);
+	}
+	<br>
+	那么调用函数后会优先采取 函数中的局部变量 rose <br>
+
+	<input type="button" value="这是演示" onclick="accessUsername()">
+</div>
+<br>
+
+<h2>js 独一档语法: </h2>
+<p>如果一个变量在声明的时候没有使用 var 关键字, 那么这个变量不论在哪里声明, 都是全局变量</p>
+
+<div style="padding:10px; border: green 1px solid; ">
+	现在有函数声明如下: <br>
+	function myFun () {
+	myName = "Waynn";
+	}
+	<br>
+	然后先调用函数: <br> myFun(); <br>
+	此时函数内部声明的变量就是一个全局变量, 可以做输出: <br> alert("myName: " + myName); <br>
+
+	<input type="button" value="调用函数和输出变量值" onclick="myFun();alert('myName is: ' + myName)"> <br>
+
+	<p>如果现在把函数定义中的变量添加 var 关键字, 那么会因为他变成一个局部变量导致报错.</p>
+
+
+</div>
+
+
+</body>
+</html>

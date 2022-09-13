@@ -1,0 +1,59 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    height: 100%
+}
+
+div {
+    border: red 2px;
+    position: relative;
+    float: left;
+}
+
+th, tr, td {
+    border: black 1px solid;
+    color: black;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+#background_container {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100%;
+}
+
+#table_container {
+
+    /* 设置背景颜色 */
+    background-color: antiquewhite;
+
+    align-self: center;
+
+    border: black 1px;
+    margin-top: 0;
+    margin-left: 10%;
+    padding: 20px;
+
+    width: 80%;
+    height: 94%;
+}
+
+#fruit_table {
+    margin: 10%;
+    width: 80%;
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
+

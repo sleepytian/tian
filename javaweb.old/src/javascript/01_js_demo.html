@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01 javascript 基本</title>
+
+	<script>
+        // 定义一个字符串变量
+        var str = "hello js!";
+
+        // 检查变量类型
+        alert(typeof str);
+
+        // 变量类型根据其保存的值的类型决定
+        str = 1000;
+        alert(typeof str);
+
+        // 创建新对象 和 添加属性值
+        var person = new Object();
+
+        person.pid = 100;
+        person.name = "name";
+
+        alert(person.pid + "_" + person.name);
+
+        // 函数
+        // 没有访问修饰符和函数返回值
+        // javascript 函数 可以反沪指, 也可以不反悔
+        //
+        function hello(num1, num2, name) {
+
+            if (num1 > num2) {
+                return "hello to" + name;
+            } else {
+                alert("hello, nobody.")
+            }
+        }
+
+        hello(1, 2, "tmp_name");
+
+        alert(hello(2, 1, "tmp_name"));
+
+
+	</script>
+
+</head>
+<body>
+<h1>
+	javascript 基本语法
+</h1>
+<h2>基本介绍</h2>
+<p>
+	javascript 是客户端脚本语言, 语法风格和 java 很像.
+	使用 'script' 标签创建内部 javascript 代码环境. <br>
+	javascript 也包括基本数据类型和 引用数据类型, 其中数值型不区分整数和小数, 字符串 不区分字符, 字符串; 单双引号作用相同.<br>
+</p>
+<p>
+	<b>布尔值比较特殊: </b> <br>
+	非零数值, 非空字符串, 非空对象, 转换成 bool 值, 都是 true.<br>
+	相反, 0, 空字符串, null, undefined 都是 false. <br>
+</p>
+<h2>引用数据类型</h2>
+
+引用类型包括:
+<ul>
+	<li>new 出来的对象</li>
+	<li>用 [] 声明的数组</li>
+	<li>用 {} 声明的对象</li>
+</ul>
+<h1>
+	javascript 函数
+</h1>
+<p>
+	javascript 的函数语法十分自由, <br>
+	定义函数的时候, 不需要定义访问权限修饰符, 不需要定义返回值类型, 函数可以 return 也可以不 return, <br>
+	输入实参的时候可以根据函数定义的形参列表输入 也可以只输入一部分甚至不输入参数.
+</p>
+
+
+</body>
+</html>

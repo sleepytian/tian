@@ -144,7 +144,115 @@ public class Employee {
 
 ## 2. 实现 BaseDAO
 
+```java
+package com.jdbc_demo.dao;
 
+import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.apache.commons.dbutils.handlers.ScalarHandler;
+
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Handler;
+
+public abstract class BaseDao <T> {
+
+    private Class<T> type;
+
+    private QueryRunner queryRunner = new QueryRunner();
+
+    public BaseDao () {
+        Class clazz = this.getClass();
+
+        ParameterizedType parameterizedType = (ParameterizedType) clazz.getGenericSuperclass();
+
+        Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
+
+        this.type = (Class<T>) actualTypeArguments[0];
+    }
+
+    /**
+     * universal update method.
+     * @param connection connection instance to mysql database
+     * @param sql sql sentences
+     * @param args args in sql string
+     * @return the rows changed in this update
+     */
+    public int update (Connection connection, String sql, Object...args) {
+
+        // 创建用于返回值的变量
+        int update = 0;
+        // queryRunner 执行 sql 操作
+        try {
+            update = queryRunner.update(connection, sql, args);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // 返回被修改的行数
+        return update;
+    }
+
+    /**
+     * 获取一个对象
+     * @param connection connection
+     * @param sql sql 语句
+     * @param args args 参数列表
+     * @return 返回 sql 语句查询的目标内容
+     */
+    public T getInstance(Connection connection, String sql, Object...args) {
+        T t = null;
+        try {
+            t = queryRunner.query(connection, sql, new BeanHandler<T>(type), args);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // 返回内容
+        return t;
+    }
+
+    /**
+     * 获取所有对象
+     * @param connection connection
+     * @param sql sql 语句
+     * @param args args 参数列表
+     * @return 以 List 的形式, 返回所有对象
+     */
+    public List<T> getAll (Connection connection, String sql, Object...args) {
+        List<T> list = null;
+        try {
+            list = queryRunner.query(connection, sql, new BeanListHandler<T>(type), args);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+
+    /**
+     * 获取特殊值的函数
+     * @param connection connection
+     * @param sql sql 语句
+     * @param args sql 语句的 参数列表
+     * @return 返回查询特殊值
+     */
+    public Object getValue (Connection connection, String sql, Object...args) {
+
+        Object query = null;
+        try {
+            query = queryRunner.query(connection, sql, new ScalarHandler<>(), args);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return query;
+    }
+
+}
+
+```
 
 ## 3. 实现接口 EmployeeDAO
 

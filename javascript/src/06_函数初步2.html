@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>06_函数初步2</title>
+
+	<script type="text/javascript" src="js/06_函数初步2.js"></script>
+
+</head>
+<body>
+
+<p>js 中的函数在调用的时候, 参数的类型和个数都没有限制. </p>
+
+<div style="border:green 1px solid; padding:10px">
+	现在假设有一个函数定义: &nbsp;
+	function getSum (a, b) {
+	return(a + b);
+	}
+	<br> <br>
+	<input type="button" onclick="alert(getSum('name'))" value="调用 alert(getSum('name'))"> <br>
+	<input type="button" onclick="alert(getSum())" value="调用 alert(getSum())">
+	NaN 表示 not a number, 即 不是一个数字 <br>
+	<input type="button" onclick="alert(getSum(1,2,5))" value="调用 alert(getSum(1,2,5))">
+	如果传入三个参数 那么只传入前两个实参, 后面的实参全部无视 <br>
+</div>
+
+<h2>js 函数是否可以重载?</h2>
+<p>考虑到 js 函数调用时候的自由程度, 实际上 js 函数根本不需要重载, 就可以随便用</p>
+<p><b> 注意: js 中不能有重名的函数, 当有多个函数重名时, 后声明的函数会覆盖前面的函数 </b></p>
+
+<div style="padding: 10px; border: green 1px solid">
+	现在假设 有两个函数: <br>
+	函数1: &nbsp;
+	function test1() {
+	alert("没有参数的 tes1 t函数");
+	}
+	<br>
+	函数2: &nbsp;
+	function test1(username) {
+	alert("有参数的 test1 函数");
+	}
+	<br>
+	<input type="button" value="调用函数 `test1('zhangSan')` " onclick="test1('zhangSan')">
+</div>
+
+</body>
+</html>

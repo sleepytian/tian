@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>01 在 html 嵌入 js 代码的第一种方式</title>
+</head>
+<body>
+
+<!--
+1. 目标功能: 点击按钮弹出消息
+
+2. js 是一个事件驱动型语言 依靠时间驱动去执行程序
+
+  有一个事件叫做鼠标单击 click
+  并且任何时间都会对应一个时间句柄 叫做 onclick
+
+  注意: 事件和时间句柄的区别在于 后者 是 前者单词前面添加 on
+    而事件句柄是以 html 标签的属性 为形式 存在的.
+
+3. 页面打开的时候 js 不会执行, 而是将 js 代码注册到 click 时间上了, 时间发生后 将注册的代码自动调用.
+
+4. 如何进行弹窗
+  有一个对象叫做 window, 代表浏览器对象
+  window 对象有一个函数叫做 alert(), 从而实现弹窗
+
+5. js 字符串可以用 单双引号
+
+6. js 语句可以加 分号, 也可以不加.
+
+-->
+
+<input type="button" value="hello" onclick="window.alert('hello');"/> <br><br>
+
+<!-- window 可以省略不屑 -->
+<input type="button" value="hello" onclick="alert('hello');
+                                            alert('hello2')
+                                            alert('hello3');"/>
+
+
+
+
+</body>
+</html>

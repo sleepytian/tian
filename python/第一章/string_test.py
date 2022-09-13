@@ -1,0 +1,6 @@
+
+
+test = "hello"
+
+print(test)
+
